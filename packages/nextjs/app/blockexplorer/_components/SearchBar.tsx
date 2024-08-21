@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { isAddress, isHex } from "viem";
-import { hardhat } from "viem/chains";
 import { usePublicClient } from "wagmi";
+import { hardhat } from "~~/hardhat.config";
 
 export const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");

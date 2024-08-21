@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { PaginationButton, SearchBar, TransactionsTable } from "./_components";
 import type { NextPage } from "next";
-import { hardhat } from "viem/chains";
+import { hardhat } from "~~/hardhat.config";
 import { useFetchBlocks } from "~~/hooks/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
 import { notification } from "~~/utils/scaffold-eth";
@@ -23,6 +23,7 @@ const BlockExplorer: NextPage = () => {
   useEffect(() => {
     if (targetNetwork.id === hardhat.id && error) {
       setHasError(true);
+      console.log(error);
     }
   }, [targetNetwork.id, error]);
 
